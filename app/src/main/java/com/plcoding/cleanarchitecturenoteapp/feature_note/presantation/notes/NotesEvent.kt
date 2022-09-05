@@ -1,8 +1,13 @@
 package com.plcoding.cleanarchitecturenoteapp.feature_note.presantation.notes
 
+import com.plcoding.cleanarchitecturenoteapp.feature_note.domain.model.Note
+import com.plcoding.cleanarchitecturenoteapp.feature_note.domain.util.NoteOrder
+
 sealed class NotesEvent {
 
-//https://www.youtube.com/watch?v=8YPXv7xKh2w&t=53s
-    //52:50
+    data class Order(val noteOrder: NoteOrder) : NotesEvent()
+    data class DeleteNote(val note: Note) : NotesEvent()
+    object RerstoreNote: NotesEvent()
+    object ToggleOrderSection: NotesEvent()
 
 }
